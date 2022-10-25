@@ -252,11 +252,7 @@
 
           // Khi prev Song
           prevBtn.onclick = function () {
-            if (_this.isRandom) {
-              _this.playRandomSong();
-            } else {
-              _this.prevSong();
-            }
+            _this.isRandom ? _this.playRandomSong() : _this.prevSong();
             audio.play();
             _this.render();
             _this.scrollToActiveSong();
@@ -264,11 +260,7 @@
 
           // Khi next Song
           nextBtn.onclick = function () {
-            if (_this.isRandom) {
-              _this.playRandomSong();
-            } else {
-              _this.nextSong();
-            }
+            _this.isRandom ? _this.playRandomSong() : _this.nextSong();
             audio.play();
             _this.render();
             _this.scrollToActiveSong();
@@ -290,11 +282,7 @@
 
           // Xu ly next Song khi audio ended
           audio.onended = function () {
-            if (_this.isRepeat) {
-              audio.play();
-            } else {
-              nextBtn.click();
-            }
+            _this.isRepeat ? audio.play() : nextBtn.click();
           };
 
           // Lang nghe hanh vi click vao playlist
